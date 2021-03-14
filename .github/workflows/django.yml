@@ -30,4 +30,5 @@ jobs:
         flake8 .
     - name: Run Tests
       run: |
-        python manage.py test
+        coverage run --source "." manage.py test
+        coverage report -m --fail-under 100
